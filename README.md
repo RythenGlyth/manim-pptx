@@ -2,15 +2,22 @@
 
 A Manim addon which exports the video as a powerpoint
 
+## Table of Contents
+
+-  [Installation](#installation)
+-  [Usage](#usage)
+    -  [Example](#example)
+-  [Contributing](#contributing)
+-  [Credit](#credit)
+
 ## Installation
 
-> To be added
+> ``pip install manim-pptx``
 
-## Contribution
+## Usage
 
-Feel free to contribute and create pull requests.
 
-## Example
+### Example
 
 ```python
 from manim_pptx import *
@@ -40,5 +47,9 @@ class TestScene(PPTXScene):
         self.endSlide()
 ```
 
+## Contribution
+
+Feel free to contribute and create pull requests.
+
 ## Credit
-Credit to both [manim-presentation](https://github.com/galatolofederico/manim-presentation) and [manim-pptx](https://github.com/yoshiask/manim-pptx) where i stole some good ideas and some code
+Credit to both [manim-presentation](https://github.com/galatolofederico/manim-presentation) and [manim-pptx](https://github.com/yoshiask/manim-pptx) where i stole some good ideas and a bit of code
