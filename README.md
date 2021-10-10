@@ -16,6 +16,7 @@ A Manim addon which exports the video as a powerpoint
 
 ## Usage
 
+To export as pptx make your scene class inherit from `PPTXScene`
 
 ### Example
 
