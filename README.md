@@ -18,6 +18,13 @@ A Manim addon which exports the video as a powerpoint
 
 To export as pptx make your scene class inherit from `PPTXScene`
 
+You can then call `self.endSlide()` to add all animations since the last `endSlide()`.
+
+The `endSlide` method has also two arguments:
+
+- `loop` - loops the whole Slide.
+- `autonext` - automatically advances to the next slide when the current slide is done animating
+
 ### Example
 
 ```python
