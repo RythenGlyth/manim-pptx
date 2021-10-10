@@ -3,7 +3,7 @@ name = "manim-pptx"
 version = "0.1.4"
 description = ""
 authors = ["RythenGlyth <rythenglyth@gmail.com>"]
-readme = "README.md
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.0"
