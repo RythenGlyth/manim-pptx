@@ -30,7 +30,7 @@ class PPTXScene(Scene):
         super(PPTXScene, self).wait(*args, **kwargs)
         self.currentAnimation += 1
 
-    def endSlide(self, loop=False,autonext=False,notes=None):
+    def endSlide(self, loop=False,autonext=False,notes=None,shownextnotes=False):
         self.slides.append(dict(
             type="loop" if loop else "slide",
             start=self.slideStartAnimation,
@@ -38,6 +38,7 @@ class PPTXScene(Scene):
             number=self.currentSlide,
             autonext=autonext,
             notes=notes,
+            shownextnotes=shownextnotes,
         ))
         self.currentSlide += 1
         self.slideStartAnimation = self.currentAnimation
@@ -95,13 +96,17 @@ class PPTXScene(Scene):
 
         #     # slide.shapes.add_movie(src_file, 0, 0, prs.slide_width, prs.slide_height)
 
-        for tslide in self.slides:
+        for tslidei, tslide in enumerate(self.slides):
             slide_movie_files = self.renderer.file_writer.partial_movie_files[tslide["start"]:tslide["end"]]
 
             slide = prs.slides.add_slide(blank_slide_layout)
 
-            if tslide["notes"] is not None:
-                slide.notes_slide.notes_text_frame.text = tslide["notes"]
+            notes = tslide["notes"] if tslide["notes"] else ""
+
+            if tslide["shownextnotes"] and len(self.slides) > tslidei + 1:
+                notes += "\n" + "\n".join(list(map(lambda x: "> " + x, self.slides[tslidei + 1]["notes"].split("\n"))))
+
+            slide.notes_slide.notes_text_frame.text = notes
 
             pics = list()
 

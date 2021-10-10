@@ -25,6 +25,7 @@ The `endSlide` method has also two arguments:
 - `loop` - loops the whole Slide.
 - `autonext` - automatically advances to the next slide when the current slide is done animating
 - `notes` - notes which should be displayed on the created Slide
+- `shownextnotes` - show the notes of the next slide in the notes of the current slide
 
 ### Example
 
@@ -44,7 +45,7 @@ class TestScene(PPTXScene):
         d = Dot()
         d.move_to(c.get_start())
         self.play(Write(d))
-        self.endSlide(autonext=True)
+        self.endSlide(autonext=True, shownextnotes=True)
 
         self.play(MoveAlongPath(d, c))
         self.endSlide(loop=True, notes="Next Animation displays Bye")

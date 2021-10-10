@@ -13,7 +13,7 @@ class TestScene(PPTXScene):
         d = Dot()
         d.move_to(c.get_start())
         self.play(Write(d))
-        self.endSlide(autonext=True)
+        self.endSlide(autonext=True, shownextnotes=True)
 
         self.play(MoveAlongPath(d, c))
         self.endSlide(loop=True, notes="Next Animation displays Bye")
