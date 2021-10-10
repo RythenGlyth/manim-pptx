@@ -30,13 +30,14 @@ class PPTXScene(Scene):
         super(PPTXScene, self).wait(*args, **kwargs)
         self.currentAnimation += 1
 
-    def endSlide(self, loop=False,autonext=False):
+    def endSlide(self, loop=False,autonext=False,notes=None):
         self.slides.append(dict(
             type="loop" if loop else "slide",
             start=self.slideStartAnimation,
             end=self.currentAnimation,
             number=self.currentSlide,
-            autonext=autonext
+            autonext=autonext,
+            notes=notes,
         ))
         self.currentSlide += 1
         self.slideStartAnimation = self.currentAnimation
@@ -98,6 +99,9 @@ class PPTXScene(Scene):
             slide_movie_files = self.renderer.file_writer.partial_movie_files[tslide["start"]:tslide["end"]]
 
             slide = prs.slides.add_slide(blank_slide_layout)
+
+            if tslide["notes"] is not None:
+                slide.notes_slide.notes_text_frame.text = tslide["notes"]
 
             pics = list()
 

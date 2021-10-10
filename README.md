@@ -46,7 +46,7 @@ class TestScene(PPTXScene):
         self.endSlide(autonext=True)
 
         self.play(MoveAlongPath(d, c))
-        self.endSlide(loop=True)
+        self.endSlide(loop=True, notes="Next Animation displays Bye")
 
         self.play(*[FadeOut(m) for m in self.mobjects])
 
