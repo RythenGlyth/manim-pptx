@@ -72,7 +72,7 @@ class PPTXScene(Scene):
         
         logger.info("Creating PPTX")
 
-        prs = pptx.Presentation()
+        prs = pptx.Presentation(pptx=os.path.join(os.path.split(__file__)[0], "template.pptx"))
 
         prs.slide_width = self.camera.pixel_width * 9525 # pixels to emu
         prs.slide_height = self.camera.pixel_height * 9525
