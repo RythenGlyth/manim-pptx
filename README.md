@@ -24,6 +24,7 @@ The `endSlide` method has also two arguments:
 
 - `loop` - loops the whole Slide.
 - `autonext` - automatically advances to the next slide when the current slide is done animating
+- `notes` - notes which should be displayed on the created Slide
 
 ### Example
 
