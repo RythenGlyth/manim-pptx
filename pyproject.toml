@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "manim-pptx"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["RythenGlyth <rythenglyth@gmail.com>"]
 
