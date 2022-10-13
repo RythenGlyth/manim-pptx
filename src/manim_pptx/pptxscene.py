@@ -45,7 +45,7 @@ class PPTXScene(Scene):
 
     def save_video_thumb(self, filename, imgname):
         subprocess.run([
-            constants.FFMPEG_BIN,
+            manim.config.ffmpeg_executable,
             '-i', filename,
             '-vframes', '1',  # one frame
             '-loglevel', 'error',
