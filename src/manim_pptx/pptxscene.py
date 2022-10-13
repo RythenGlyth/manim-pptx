@@ -28,7 +28,7 @@ class PPTXScene(Scene):
 
     def wait(self, *args, **kwargs):
         super(PPTXScene, self).wait(*args, **kwargs)
-        self.currentAnimation += 1
+        #self.currentAnimation += 1
 
     def endSlide(self, loop=False,autonext=False,notes=None,shownextnotes=False):
         self.slides.append(dict(
